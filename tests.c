@@ -41,7 +41,15 @@ static char *test_deg2rad() {
     double rad = 0.523599;
     double actualRad = deg2rad(degrees);
     double diff = fabs(actualRad - rad);
-    mu_assert("error, deg2rad not correct", diff < 0.0001);
+    mu_assert("error, deg2rad not correct", diff < EPSILON);
+    return 0;
+}
+
+static char *test_lengthOfVector() {
+    Vector testVector = {.x = 4, .y = 3};
+    double expectedLength = 5;
+    double diff = fabs(GetLengthOfVector(testVector) - expectedLength);
+    mu_assert("error, lengthOfVector not correect", diff < EPSILON);
     return 0;
 }
 
@@ -50,6 +58,7 @@ static char *all_tests() {
     mu_run_test(test_ifBallFalls);
     mu_run_test(test_ifBallFlies);
     mu_run_test(test_deg2rad);
+    mu_run_test(test_lengthOfVector);
     return 0;
 }
 

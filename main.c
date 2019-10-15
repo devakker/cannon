@@ -31,7 +31,8 @@ int main(int argc, char *argv[]) {
         State state = GetStateAt(time);
         time += arguments.timePeriod;
         ballHeight = state.position.y;
-        printf("x: %.2f y: %.2f\n", state.position.x, state.position.y);
+        double distanceFromCannon = GetLengthOfVector(state.position);
+        printf("x: %.2f y: %.2f distance: %.2f\n", state.position.x, state.position.y, distanceFromCannon);
     }
 
     return 0;

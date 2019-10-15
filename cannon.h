@@ -21,6 +21,7 @@ Vector initialSpeed;
 
 Vector ConvertToVector(double length, double angle);
 State GetStateAt(double time);
+double GetLengthOfVector(Vector vector);
 double deg2rad(double degrees);
 
 #endif //CANNON_CANNON_H

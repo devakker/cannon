@@ -29,6 +29,12 @@ Vector ConvertToVector(double length, double angle) {
     return result;
 }
 
+double GetLengthOfVector(Vector vector) {
+    double length = sqrt(vector.x * vector.x + vector.y * vector.y);
+    return length;
+}
+
+
 double deg2rad(double degrees) {
     return degrees * M_PI / 180;
 }
